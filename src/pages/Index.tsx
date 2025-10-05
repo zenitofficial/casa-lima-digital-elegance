@@ -145,32 +145,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section - Trabalhe Conosco */}
+      {/* CTA Section - Espaço de Trabalho */}
       <section className="py-32 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-5xl font-playfair font-bold mb-8 text-primary">
-            Faça Parte da Nossa Equipe
+            Seu Escritório Refinado
           </h2>
           <div className="h-[1px] w-24 bg-gold mx-auto mb-12" />
           <p className="text-lg leading-relaxed text-foreground/80 mb-6">
-            Estamos sempre em busca de talentos apaixonados pela gastronomia e pelo atendimento de excelência.
+            Trabalhar remotamente não precisa ser solitário ou sem inspiração. 
+            Transforme sua produtividade em nosso ambiente sofisticado e acolhedor.
           </p>
           <p className="text-lg leading-relaxed text-foreground/80 mb-10">
-            Se você se identifica com nossos valores de sofisticação, qualidade e dedicação, 
-            queremos conhecer você. Junte-se a uma equipe que está redefinindo a experiência gastronômica 
-            em São José dos Pinhais.
+            WiFi de alta velocidade, café premium ilimitado, ambiente climatizado e 
+            a melhor gastronomia ao seu alcance. O The Casa Lima é o espaço perfeito 
+            para quem busca produtividade com conforto e elegância.
           </p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
+            <div className="p-6 bg-card border border-gold/20 rounded-sm">
+              <p className="text-2xl font-playfair text-gold mb-2">WiFi Premium</p>
+              <p className="text-sm text-foreground/70">Alta velocidade</p>
+            </div>
+            <div className="p-6 bg-card border border-gold/20 rounded-sm">
+              <p className="text-2xl font-playfair text-gold mb-2">Café Ilimitado</p>
+              <p className="text-sm text-foreground/70">Drinks especiais</p>
+            </div>
+            <div className="p-6 bg-card border border-gold/20 rounded-sm">
+              <p className="text-2xl font-playfair text-gold mb-2">Ambiente Único</p>
+              <p className="text-sm text-foreground/70">Sofisticação & conforto</p>
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:contato@thecasalima.com.br">
-              <Button variant="elegant" size="lg" className="text-base min-w-[200px]">
-                Enviar Currículo
-              </Button>
-            </a>
             <a href="https://wa.me/5541999999999" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="text-base min-w-[200px] border-gold hover:bg-gold/10">
-                Falar no WhatsApp
+              <Button variant="elegant" size="lg" className="text-base min-w-[200px]">
+                Reserve Seu Espaço
               </Button>
             </a>
+            <Link to="/cardapio">
+              <Button variant="outline" size="lg" className="text-base min-w-[200px] border-gold hover:bg-gold/10">
+                Ver Cardápio
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
