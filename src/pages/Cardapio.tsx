@@ -3,6 +3,22 @@ import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+// Import menu images
+import menuBruschetta from "@/assets/menu-bruschetta.jpg";
+import menuCarpaccio from "@/assets/menu-carpaccio.jpg";
+import menuCheese from "@/assets/menu-cheese.jpg";
+import menuRisotto from "@/assets/menu-risotto.jpg";
+import menuFilet from "@/assets/menu-filet.jpg";
+import menuSalmon from "@/assets/menu-salmon.jpg";
+import menuPasta from "@/assets/menu-pasta.jpg";
+import menuPetitgateau from "@/assets/menu-petitgateau.jpg";
+import menuTiramisu from "@/assets/menu-tiramisu.jpg";
+import menuCremebrulee from "@/assets/menu-cremebrulee.jpg";
+import menuWine from "@/assets/menu-wine.jpg";
+import menuEspumante from "@/assets/menu-espumante.jpg";
+import menuCocktail from "@/assets/menu-cocktail.jpg";
+import menuJuice from "@/assets/menu-juice.jpg";
+
 type Category = "todas" | "entradas" | "principais" | "sobremesas" | "bebidas";
 
 interface MenuItem {
@@ -11,6 +27,7 @@ interface MenuItem {
   description: string;
   price: string;
   category: Exclude<Category, "todas">;
+  image: string;
 }
 
 const menuItems: MenuItem[] = [
@@ -21,6 +38,7 @@ const menuItems: MenuItem[] = [
     description: "Pão artesanal com tomates confitados, burrata fresca e manjericão",
     price: "R$ 38,00",
     category: "entradas",
+    image: menuBruschetta,
   },
   {
     id: 2,
@@ -28,6 +46,7 @@ const menuItems: MenuItem[] = [
     description: "Salmão fresco em finas fatias, alcaparras, molho de limão siciliano",
     price: "R$ 52,00",
     category: "entradas",
+    image: menuCarpaccio,
   },
   {
     id: 3,
@@ -35,6 +54,7 @@ const menuItems: MenuItem[] = [
     description: "Seleção de queijos artesanais, geleias e pães",
     price: "R$ 65,00",
     category: "entradas",
+    image: menuCheese,
   },
   
   // Pratos Principais
@@ -44,6 +64,7 @@ const menuItems: MenuItem[] = [
     description: "Arroz arbóreo com cogumelos porcini, parmesão reggiano e trufa negra",
     price: "R$ 78,00",
     category: "principais",
+    image: menuRisotto,
   },
   {
     id: 5,
@@ -51,6 +72,7 @@ const menuItems: MenuItem[] = [
     description: "Filé mignon grelhado, molho madeira, purê de batata trufado",
     price: "R$ 92,00",
     category: "principais",
+    image: menuFilet,
   },
   {
     id: 6,
@@ -58,6 +80,7 @@ const menuItems: MenuItem[] = [
     description: "Salmão ao molho de maracujá, legumes salteados e quinoa",
     price: "R$ 85,00",
     category: "principais",
+    image: menuSalmon,
   },
   {
     id: 7,
@@ -65,6 +88,7 @@ const menuItems: MenuItem[] = [
     description: "Massa fresca com ragu de cordeiro ao vinho tinto",
     price: "R$ 72,00",
     category: "principais",
+    image: menuPasta,
   },
   
   // Sobremesas
@@ -74,6 +98,7 @@ const menuItems: MenuItem[] = [
     description: "Bolo de chocolate com recheio cremoso, sorvete de baunilha",
     price: "R$ 28,00",
     category: "sobremesas",
+    image: menuPetitgateau,
   },
   {
     id: 9,
@@ -81,6 +106,7 @@ const menuItems: MenuItem[] = [
     description: "Clássico italiano com café expresso e mascarpone",
     price: "R$ 32,00",
     category: "sobremesas",
+    image: menuTiramisu,
   },
   {
     id: 10,
@@ -88,6 +114,7 @@ const menuItems: MenuItem[] = [
     description: "Creme francês com açúcar caramelizado e frutas vermelhas",
     price: "R$ 30,00",
     category: "sobremesas",
+    image: menuCremebrulee,
   },
   
   // Bebidas
@@ -97,6 +124,7 @@ const menuItems: MenuItem[] = [
     description: "Seleção especial de vinhos tintos da nossa adega",
     price: "R$ 120,00",
     category: "bebidas",
+    image: menuWine,
   },
   {
     id: 12,
@@ -104,6 +132,7 @@ const menuItems: MenuItem[] = [
     description: "Espumante italiano seco, ideal para aperitivos",
     price: "R$ 95,00",
     category: "bebidas",
+    image: menuEspumante,
   },
   {
     id: 13,
@@ -111,6 +140,7 @@ const menuItems: MenuItem[] = [
     description: "Drink autoral da casa com destilados premium",
     price: "R$ 38,00",
     category: "bebidas",
+    image: menuCocktail,
   },
   {
     id: 14,
@@ -118,6 +148,7 @@ const menuItems: MenuItem[] = [
     description: "Sucos de frutas frescas e combinações exclusivas",
     price: "R$ 18,00",
     category: "bebidas",
+    image: menuJuice,
   },
 ];
 
@@ -176,25 +207,35 @@ const Cardapio = () => {
 
       {/* Menu Items */}
       <section className="py-16 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item, index) => (
               <div
                 key={item.id}
-                className="group p-8 bg-card border border-border rounded-sm hover:border-gold transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group bg-card border border-border rounded-sm overflow-hidden hover:border-gold transition-all duration-500 animate-fade-in"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-2xl font-playfair font-semibold text-primary group-hover:text-gold transition-colors">
-                    {item.name}
-                  </h3>
-                  <span className="text-xl font-playfair text-gold ml-4 flex-shrink-0">
-                    {item.price}
-                  </span>
+                <div className="overflow-hidden aspect-square">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <p className="text-foreground/70 leading-relaxed">
-                  {item.description}
-                </p>
+                
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-xl font-playfair font-semibold text-primary group-hover:text-gold transition-colors duration-300">
+                      {item.name}
+                    </h3>
+                    <span className="text-lg font-playfair text-gold ml-4 flex-shrink-0">
+                      {item.price}
+                    </span>
+                  </div>
+                  <p className="text-foreground/70 leading-relaxed text-sm">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

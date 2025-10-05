@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroBistro from "@/assets/hero-bistro.jpg";
+import bistroInterior from "@/assets/bistro-interior.jpg";
 import dish1 from "@/assets/dish-1.jpg";
 import drink1 from "@/assets/drink-1.jpg";
 import dessert1 from "@/assets/dessert-1.jpg";
@@ -37,20 +38,34 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-32 px-4 bg-background">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-5xl font-playfair font-bold mb-8 text-primary animate-slide-up">
-            Nossa História
-          </h2>
-          <div className="h-[1px] w-24 bg-gold mx-auto mb-12" />
-          <p className="text-lg leading-relaxed text-foreground/80 mb-6">
-            O que começou como um food truck apaixonado evoluiu para uma experiência gastronômica 
-            sofisticada que redefine o conceito de bistro em São José dos Pinhais.
-          </p>
-          <p className="text-lg leading-relaxed text-foreground/80">
-            Há 6 meses, abrimos as portas da nossa loja física, trazendo uma proposta única: 
-            combinar a autenticidade da nossa origem com a elegância de um ambiente requintado. 
-            Cada prato é uma celebração de sabores cuidadosamente elaborados para momentos inesquecíveis.
-          </p>
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <div className="overflow-hidden rounded-sm">
+                <img 
+                  src={bistroInterior} 
+                  alt="Interior do The Casa Lima" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            <div className="order-1 md:order-2">
+              <h2 className="text-5xl font-playfair font-bold mb-8 text-primary animate-slide-up">
+                Nossa História
+              </h2>
+              <div className="h-[1px] w-24 bg-gold mb-8" />
+              <p className="text-lg leading-relaxed text-foreground/80 mb-6">
+                O que começou como um food truck apaixonado evoluiu para uma experiência gastronômica 
+                sofisticada que redefine o conceito de bistro em São José dos Pinhais.
+              </p>
+              <p className="text-lg leading-relaxed text-foreground/80">
+                Há 6 meses, abrimos as portas da nossa loja física, trazendo uma proposta única: 
+                combinar a autenticidade da nossa origem com a elegância de um ambiente requintado. 
+                Cada prato é uma celebração de sabores cuidadosamente elaborados para momentos inesquecíveis.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -113,7 +128,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Reserve */}
       <section className="py-32 px-4 bg-primary text-background">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-5xl font-playfair font-bold mb-6">
@@ -127,6 +142,36 @@ const Index = () => {
               Ver Cardápio Completo
             </Button>
           </Link>
+        </div>
+      </section>
+
+      {/* CTA Section - Trabalhe Conosco */}
+      <section className="py-32 px-4 bg-secondary/20">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-5xl font-playfair font-bold mb-8 text-primary">
+            Faça Parte da Nossa Equipe
+          </h2>
+          <div className="h-[1px] w-24 bg-gold mx-auto mb-12" />
+          <p className="text-lg leading-relaxed text-foreground/80 mb-6">
+            Estamos sempre em busca de talentos apaixonados pela gastronomia e pelo atendimento de excelência.
+          </p>
+          <p className="text-lg leading-relaxed text-foreground/80 mb-10">
+            Se você se identifica com nossos valores de sofisticação, qualidade e dedicação, 
+            queremos conhecer você. Junte-se a uma equipe que está redefinindo a experiência gastronômica 
+            em São José dos Pinhais.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:contato@thecasalima.com.br">
+              <Button variant="elegant" size="lg" className="text-base min-w-[200px]">
+                Enviar Currículo
+              </Button>
+            </a>
+            <a href="https://wa.me/5541999999999" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="text-base min-w-[200px] border-gold hover:bg-gold/10">
+                Falar no WhatsApp
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
