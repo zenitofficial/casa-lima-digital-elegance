@@ -22,6 +22,15 @@ export const Navigation = () => {
             Início
           </Link>
           <Link
+            to="/nossa-historia"
+            className={cn(
+              "elegant-underline text-sm tracking-wide transition-colors",
+              location.pathname === "/nossa-historia" ? "text-gold" : "text-foreground hover:text-gold"
+            )}
+          >
+            Nossa História
+          </Link>
+          <Link
             to="/cardapio"
             className={cn(
               "elegant-underline text-sm tracking-wide transition-colors",

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Cardapio from "./pages/Cardapio";
+import NossaHistoria from "./pages/LinhaDoTempo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -14,11 +15,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/casa-lima-digital-elegance/">
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/nossa-historia" element={<NossaHistoria />} />
           <Route path="/cardapio" element={<Cardapio />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

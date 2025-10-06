@@ -194,7 +194,7 @@ const Cardapio = () => {
                 variant={selectedCategory === category.id ? "elegant" : "outline"}
                 onClick={() => setSelectedCategory(category.id as Category)}
                 className={cn(
-                  "min-w-[140px] transition-all duration-300",
+                  "min-w-[140px] transition-all duration-400 rounded-2xl",
                   selectedCategory === category.id && "ring-2 ring-gold"
                 )}
               >
@@ -212,7 +212,7 @@ const Cardapio = () => {
             {filteredItems.map((item, index) => (
               <div
                 key={item.id}
-                className="group bg-card border border-border rounded-sm overflow-hidden hover:border-gold transition-all duration-500 animate-fade-in"
+                className="group bg-card rounded-2xl border border-border overflow-hidden hover:border-gold transition-all duration-900 animate-fade-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className="overflow-hidden aspect-square">
